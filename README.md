@@ -24,33 +24,36 @@ We used our pipelines to generate thousands of example Q&A, and filtered it down
 
 We have 4 major buckets of queries we've put into SearchBench. Each of these attempt to mimic realistic day to day usage of these products.
 
-1. Name
+1. Simple
 
-Description
+Basic questions that depend on a single piece of information with no/limited analysis required to answer.
 
-2. Name
+2. Complex
 
-Description
+Questions that require synthesis across multiple pieces of information to answer. For example, "What player from the 90s Chicago Bulls dynasty went onto win additional championships as a head coach of another team?"
 
-3. Name
+3. Hallucination Inducing
  
-Description
+Questions with false premises or that are otherwise unanswerable. We expect AI assistants to detect false premises and respond factually to real world events.
 
-5. Name
+For example, "After Steph Curry retired from the NBA, what job did he take on?"
 
-Description // Notably, we update this section regularly with the latest news, la la la. 
-This means that Searchbench isn't always comparable across points in time; we will update this regularly. Our goal is to give product feedback, so it's more important for a product to keep up with the latest news than it is for our benchmark to be static.
+5. News
+
+Questions with answers that have changed recently because of developments in the real world. 
+Notably, we plan update this section regularly. This means that Searchbench isn't always comparable across points in time.
+Our goal is to give product feedback, so it's more important for a product to keep up with the latest news than it is for our benchmark to be static.
 
 #### Tradeoffs
 
-Because search answers are often given in different formats across different products, we use LLMs-as-a-judge to evaluate their efficacy. We believe that this results in a more representative test than standard multiple choice style benchmarks.
+Because search answers are often given in different formats across different products, we use LLMs-as-a-judge to evaluate their efficacy. We believe that this results in a more realistic test than standard multiple choice style benchmarks.
 
-There are limitations to this; particularly that different products might believe different answer formats are "better" than others.
-We don't make major attempts to discern between the subjective quality of answers beyond factual accuracy and relative conciseness.
+There are limitations to this; particularly that different products might believe some answer formats are "better" than others. We don't attempt to discern between the subjective quality of answers beyond factual accuracy and relative conciseness.
 
-In addition, we acknowledge that LLMs-as-a-judge, though relatively effective, may sometimes make mistakes. This would an issue for an academic benchmark where rigor and leaderboards are prioritized but this is not a benchmark for academics; it is for product builders.
+In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes particularly because we're judging open ended answers. We intentionally choose to grade open ended answers over multiple choice questions because multiple choice performance is not representative of user experience. With SearchBench we are OK with a few false positives if it means that we can run a more realistic tests on products.
 
-It's impractical for teams to manually test 1000 questions at a time every time they push a new PR; dev teams need relatively informative feedback quickly. With SearchBench we are OK with a few false positives if it means that teams get fast day to day feedback on how their changes.
+Lastly, we choose to use LLMs as a judge over humans as a practical matter. While aligned humans may catch some things a good LLM pipeline doesnt, it's simply not practical for engineering changes to run manual checks on every PR they put up. Once again we trade false positives for rapid, relevant feedback.
+
 
 ## Moving Forward
 
