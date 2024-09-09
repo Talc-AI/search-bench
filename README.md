@@ -2,8 +2,8 @@
 
 There's a number of academic performance benchmarks for LLMs, but there are two major issues that prevent benchmarks from being useful to real product teams
 
-1. They're static. Because they leak everywhere they're easily gamed and overfit. Even if unintentional, static benchmarks inevietably make their way into training data.
-2. They're laregly theorhetical. They have an extremely academic focus on the theorhetical limits of LLM capabilities, and reasoning. As a result, feedback from standards like MMLU often don't give us much information about how a product works. What are you supposed to do if your AI doesn't answer a MCAT question correctly? Do your users even care? 
+1. They're static. Because they leak everywhere they're easily gamed and overfit. Even if unintentional, static benchmarks inevitably make their way into training data.
+2. They're largely theoretical. They have an extremely academic focus on the theoretical limits of LLM capabilities, and reasoning. As a result, feedback from standards like MMLU often don't give us much information about how a product works. What are you supposed to do if your AI doesn't answer a MCAT question correctly? Do your users even care? 
 
 We wanted to make a practical benchmark that focuses on every day helpfulness of these search assistants. 
 Searchbench is a benchmark of realistic queries and expected answers with the goal of giving timely and tangible feedback to product teams.
@@ -41,7 +41,7 @@ For example, "After Steph Curry retired from the NBA, what job did he take on?"
 5. News
 
 Questions with answers that have changed recently because of developments in the real world. 
-Notably, we plan update this section regularly. This means that Searchbench isn't always comparable across points in time.
+Notably, we plan to update this section regularly. This means that Searchbench isn't always comparable across points in time.
 Our goal is to give product feedback, so it's more important for a product to keep up with the latest news than it is for our benchmark to be static.
 
 #### Tradeoffs
@@ -50,9 +50,9 @@ Because search answers are often given in different formats across different pro
 
 There are limitations to this; particularly that different products might believe some answer formats are "better" than others. We don't attempt to discern between the subjective quality of answers beyond factual accuracy and relative conciseness.
 
-In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes particularly because we're judging open ended answers. We intentionally choose to grade open ended answers over multiple choice questions because multiple choice performance is not representative of user experience. With SearchBench we are OK with a few false positives if it means that we can run a more realistic tests on products.
+In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes particularly because we're judging open ended answers. We intentionally choose to grade open ended answers over multiple choice questions because multiple choice performance is not representative of user experience. With SearchBench we are OK with a few false positives if it means that we can run more realistic tests on products.
 
-Lastly, we choose to use LLMs as a judge over humans as a practical matter. While aligned humans may catch some things a good LLM pipeline doesnt, it's simply not practical for engineering changes to run manual checks on every PR they put up. Once again we trade false positives for rapid, relevant feedback.
+Lastly, we choose to use LLMs as a judge over humans as a practical matter. While aligned humans may catch some things a good LLM pipeline doesn't, it's simply not practical for engineering changes to run manual checks on every PR they put up. Once again we trade false positives for rapid, relevant feedback.
 
 
 ## Moving Forward
@@ -61,7 +61,7 @@ You can expect us to update this benchmark from time to time to keep up with the
 
 If you find things are wrong, we'll correct it. If you find questions are unhelpful or irrelevant, let us know what would be more helpful and we'll add it. 
 
-Searchbench isn't an academic gold standard; it is a practical, thorough-as-can-be feedback tool build for the people who care more about their users than leaderboards.
+Searchbench isn't an academic gold standard; it is a practical, thorough-as-can-be feedback tool built for the people who care more about their users than leaderboards.
 
 
 
