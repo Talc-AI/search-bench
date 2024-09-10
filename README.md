@@ -54,6 +54,18 @@ In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes par
 
 Lastly, we choose to use LLMs as a judge over humans as a practical matter. While aligned humans may catch some things a good LLM pipeline doesn't, it's simply not practical for engineering changes to run manual checks on every PR they put up. Once again we trade false positives for rapid, relevant feedback.
 
+## Current Rankings
+As of August 30th 2024
+
+| Rank | Provider | Overal Correctness Score |
+| --- | --- | --- |
+| 1 | Andi Search | 87% |
+| 2 | You.com | 80% |
+| 3 | Google Gemini | 71% |
+| 4 | OpenAI ChatGPT (4o mini) | 62% |
+| 5 | Perplexity  | 59% |
+
+These benchmarks were all run on the free tier for their associated products.
 
 ## Moving Forward
 
