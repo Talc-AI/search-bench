@@ -75,6 +75,8 @@ If you find anything incorrect, unhelpful, or irrelevant, let us know how you th
 
 Searchbench isn't an academic gold standard; instead, we hope it is a practical, thorough-as-can-be feedback tool built for anyone who cares more about users than leaderboards.
 
+For questions, feedback, or contributing, reach out to matt at talc.ai.
+
 
 
 
