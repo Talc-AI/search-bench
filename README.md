@@ -62,7 +62,7 @@ As of August 30th 2024
 | 1 | Andi Search | 87% |
 | 2 | You.com | 80% |
 | 3 | Google Gemini | 71% |
-| 4 | OpenAI ChatGPT (4o mini) | 62% |
+| 4 | OpenAI ChatGPT | 62% |
 | 5 | Perplexity  | 59% |
 
 These benchmarks were all run on the free tier for their associated products.
