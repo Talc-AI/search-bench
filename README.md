@@ -57,7 +57,7 @@ Lastly, we choose to use LLMs as a judge over humans as a practical matter. Whil
 ## Current Rankings
 As of August 30th 2024
 
-| Rank | Provider | Overal Correctness Score |
+| Rank | Provider | Overall Correctness Score |
 | --- | --- | --- |
 | 1 | Andi Search | 87% |
 | 2 | You.com | 80% |
