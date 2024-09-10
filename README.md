@@ -67,21 +67,6 @@ In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes on 
 
 Lastly, we choose to use LLMs as a judge over humans as a practical matter. While aligned humans may catch some things a good LLM pipeline doesn't, it's simply not practical for engineers to run manual checks on every PR they put up. Once again we trade false positives for timely, relevant feedback.
 
-## Current Rankings
-As of August 30th 2024
-
-| Rank | Provider | Overall Correctness Score |
-| --- | --- | --- |
-| 1 | Andi Search | 87% |
-| 2 | You.com* | 80% |
-| 3 | Google Gemini | 71% |
-| 4 | OpenAI ChatGPT | 62% |
-| 5 | Perplexity  | 59% |
-
-*Note that You.com was run with their OpenAI API integration, since their search product focuses on returning links.
-
-These benchmarks were all run on the free tier for their associated products.
-
 ## Moving Forward
 
 You can expect us to update this benchmark from time to time to keep up with the latest going on in the world! We're also very open to feedback; this benchmark is by no means perfect-- we'd rather it be useful.
