@@ -2,18 +2,28 @@
 
 There's a number of academic performance benchmarks for LLMs, but there are two major issues that prevent benchmarks from being useful to real product teams
 
-1. They're theoretical. Most benchmarks have an extremely academic focus on the theoretical limits of LLM capabilities and reasoning. As a result, feedback from standards like MMLU often don't give us much information about how a real product behaves. What are you supposed to do if your AI doesn't answer a MCAT question correctly? Do your users even care? 
-2. They're static. Benchmarks leak everywhere and don't change, meaning they're easily gamed and overfit. Even if unintentional, static benchmarks inevitably make their way into training data and dilute results.
+#### 1. They're theoretical.
+   
+Most benchmarks have an academic focus on the theoretical limits of LLMs. As a result, feedback from standards like MMLU often don't tell us much about how a real product behaves. What are you supposed to do if your AI can't answer a MCAT question? Do your users even care? 
 
-We wanted to make a practical benchmark that focuses on every day helpfulness of these search assistants. 
+#### 2. They're static.
+   
+Benchmarks leak everywhere and don't change. This means we have no information on how well products keep up with changing times.
+
+We wanted to make a practical benchmark that focuses on every day helpfulness of LLM products, not just the underlying models.
 Searchbench is a benchmark that addresses these issues by:
 
-1. Focusing on realistic user queries and behavior over theorhetical limits. That means we'd rather cover common use cases like "why is my monstera turning yellow at the roots?" over artificial multistep challenges like "What was the high school mascot of the cousin of the 3rd person on the moon?"
-2. Incorporating new knowledge over time. Users expect timely information from their LLM products; we don't just test a model's ability to know this information, but a product's ability to incorporate it. Any AI that doesn't know about Taylor Swift's latest album isn't serving a lot of users.
+#### 1. Focusing on realistic user queries and behavior over theorhetical limits.
+
+That means we'd rather cover common use cases like "why is my monstera turning yellow at the roots?" over artificial multistep challenges like "What was the high school mascot of the cousin of the 3rd person on the moon?" 
+
+#### 2. Incorporating new knowledge over time. 
+
+Users expect timely information from their LLM products; we don't just test a model's ability to know this information, but a product's ability to incorporate it. Any AI that doesn't know about Taylor Swift's latest album isn't serving a lot of users.
 
 ## Methodology
 
-#### Dataset Creation
+### Dataset Creation
 
 Our service, Talc, turns knowledge bases into Q&A datasets for testing and training. At a high level, we:
 
@@ -23,37 +33,37 @@ Our service, Talc, turns knowledge bases into Q&A datasets for testing and train
 
 We used our pipelines to generate thousands of example Q&A, and filtered it down manually to the highest quality, most interesting 900 samples.
 
-#### Query Categories
+### Query Categories
 
 We categorize SearchBench into 4 major categories, each of which attempts to mimic realistic use of these products.
 
-1. Simple
+#### 1. Simple
 
 Basic questions that depend on a single piece of information with little analysis required.
 
-2. Complex
+#### 2. Complex
 
 Questions that require synthesis across multiple sources of information to answer. For example, "What player saw great success both as a member of the Chigago Bulls 90s dynasty as well as the recent Golden State Warriors era?" might require diving into two separate sets of documents to find a commonality.
 
-3. Hallucination Inducing
+#### 3. Hallucination Inducing
  
 Questions with false premises or that are otherwise unanswerable. We expect AI assistants to detect false premises and respond factually to real world events.
 
 For example, "After Steph Curry retired from the NBA, what job did he take on?" should be recognized as having incorrect information.
 
-5. News
+#### 4. News
 
 Questions with answers that have changed recently because of developments in the real world. 
 Notably, we plan to update this section regularly. This means that Searchbench isn't always comparable across points in time.
 Our goal is to give product feedback, so it's more important for a product to keep up with the latest news than it is for our benchmark to be static.
 
-#### Tradeoffs
+### Tradeoffs
 
 Because search answers are often given in different formats across different products, we use LLMs-as-a-judge to evaluate their efficacy. We believe that this results in a more realistic analysis than multiple choice style benchmarks.
 
 There are limitations to this; one is that different products might believe some answer formats are better than others. We don't attempt to discern between the subjective quality of answers beyond factual accuracy and relative conciseness.
 
-In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes particularly because we're judging open ended answers. We thought this was an appropriate tradeoff because open ended answers are more representative of the user experience than multiple choice-- when has anyone ever asked Google a multiple choice question? SearchBench is OK with a few false positives if it means running more realistic tests. This means that in using SearchBench we encourage you to focus on the actual use cases, successful or not, rather than the final score.
+In addition, we acknowledge that LLMs-as-a-judge may sometimes make mistakes on open ended answers. We chose to grade open ended answers (and sometimes deal with false positives) because they're more realistic than multiple choice questions -- when has anyone ever given Google multiple choice? This means that in using SearchBench we encourage you to focus on the content of the test cases, successful or not, over the final score.
 
 Lastly, we choose to use LLMs as a judge over humans as a practical matter. While aligned humans may catch some things a good LLM pipeline doesn't, it's simply not practical for engineers to run manual checks on every PR they put up. Once again we trade false positives for timely, relevant feedback.
 
