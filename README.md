@@ -13,7 +13,7 @@ Benchmarks leak everywhere and don't change. This means we have no information o
 We wanted to make a practical benchmark that focuses on every day helpfulness of LLM products, not just the underlying models.
 Searchbench is a benchmark that addresses these issues by:
 
-#### 1. Focusing on realistic user queries and behavior over theorhetical limits.
+#### 1. Focusing on realistic user queries
 
 That means we'd rather cover common use cases like "why is my monstera turning yellow at the roots?" over artificial multistep challenges like "What was the high school mascot of the cousin of the 3rd person on the moon?" 
 
