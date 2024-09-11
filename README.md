@@ -77,6 +77,22 @@ Searchbench isn't an academic gold standard; instead, we hope it is a practical,
 
 For questions, feedback, or contributing, reach out to matt at talc.ai.
 
+## Known Issues:
 
+A few automated mistakes we're aware of and will prioritize changes for. In particular, this seems to be coming from our hallucination inducing questions that might not always have the right context.
 
+Scanning through the datasets we don't believe this skews the results in favor of any product, though they affect the signal to noise ratio if using this as a test:
 
+question: year singapore completely banned all chewing gum sales and possession
+expected_answer: This question is misleading. The text does not mention any ban on chewing gum in Singapore. While Singapore has strict laws, a complete ban on all chewing gum sales and possession is not mentioned in the given information.
+correct answer: 1992
+
+question: What was Tim Walz's role in the U.S. House of Representatives from 2017 to 2019?
+expected_answer: This question is based on a false premise. Tim Walz was not the ranking member of the House Veterans' Affairs Committee from 2017 to 2019. He was the ranking member of the House Veterans' Affairs Committee during that time period.
+
+question: What was the worldwide gross of 'Jurassic Park' from its original release?
+expected_answer: ##########
+
+question: what was the first major award won by the bear tv show
+expected_answer: The question is misleading as there's no clear information about which specific award The Bear won first. The show has won multiple awards, but the chronological order is not provided in the given text.
+correct answer: 2024 Emmy Award for Outstanding Comedy Series
